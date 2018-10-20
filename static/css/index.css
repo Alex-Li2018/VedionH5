@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #313136;
+}
+
+.video-box {
+    position: relative;
+    margin: 100px auto;
+    
+}
+
+.video-box-body {
+    text-align: center;
+   
+}
+
+.video-body {
+    width: 866px;
+    height: 448px;
+}
+
+/* 控制盒子的部分 */
+.video-control {
+    width: 886px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 4px;
+    transform: translateX(-50%);
+    background-color: rgba(49,49,54,.5);
+    display: flex;
+    padding: 5px 0px;
+}
+
+
+#loadBtn,#playPausebtn,
+#mutedBtn,#fullScreenBar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#loadBtn {
+    margin-left: 90px;
+}
+
+#playPausebtn {
+    margin-left: 10px;
+}
+
+#fullScreenBar {
+    margin-right: 90px;
+}
+
+#mutedBtn {
+   margin: 0 10px; 
+}
+
+/* 进度条盒子 */
+.progress-box {
+    flex: 1;
+    padding:0 5px 0 15px;
+    color: #fff;
+}
+
+.progress-box-body {
+    width: 100%;
+    height: 100px;
+    display: flex;
+}
+
+.current-time,.duration-time {
+    width: 40px;
+    line-height: 40px;
+}
+
+.duration-time {
+    margin-left: 5px;
+}
+
+.durationbar-box {
+    flex: 1;
+    padding: 0 10px;
+}
+
+/* 总进度条 */
+.durationbar {
+    width: 100%;
+    position: relative;
+    height: 20px;
+    background-color: rgb(109, 109, 233);
+    margin-top: 10px;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+/* 缓冲进度条 */
+.bufferbar {
+    width: 0px;
+    height: 20px;
+    background-color: rgba(155, 155, 204,.8);
+    position: absolute;
+    border-radius: 10px;
+    z-index: 101;
+    left: 0;
+}
+
+/* 正在播放进度条 */
+.currentbar {
+    width: 0px;
+    height: 20px;
+    background-color: rgb(182, 15, 15);
+    position: absolute;
+    border-radius: 10px;
+    z-index: 102;
+    left: 0;
+}
+
+.drawbar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 0px;
+    z-index: 103;
+}
+
+
+
+
+
+
+

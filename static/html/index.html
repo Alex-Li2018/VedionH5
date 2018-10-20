@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/fontAwesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../css/index.css">
+    <!-- <link rel="stylesheet" href="/index.css"> -->
+</head>
+<body>
+    <div class="video-box" id="videoBox"><!--video 盒子-->
+        <div class="video-box-body">
+            <video class="video-body" id="videoBody" src="../video/movie01.mp4">
+                您的浏览器不支持video
+            </video>
+            <!--控制条盒子-->
+            <div class="video-control" id="videoControl">
+                <div class="control-leftview">
+                    <!--刷新键-->
+                    <div class="fa fa-refresh" id="loadBtn"></div>
+                    <!--暂停/播放键-->
+                    <div class="fa fa-play" id="playPausebtn"></div>
+                </div>
+                <!-- 进度盒子 -->
+                <div class="progress-box">
+                    <div class="progress-box-body">
+                        <!--播放时长-->
+                        <div class="current-time" id="currentTime">00:00</div>
+                        <div class="durationbar-box">
+                            <!--总视频长度进度条-->
+                            <div class="durationbar" id="durationBar">
+                                <!--缓冲进度条-->
+                                <div class="bufferbar" id="bufferBar"></div>
+                                <!--正在播放进度条-->
+                                <div class="currentbar" id="currentBar"></div>
+                                <div class="drawbar" id="drawBar"></div>
+                            </div>
+                        </div>
+                        <!--总时长-->
+                        <div class="duration-time" id="durationTime">00:00</div>
+                    </div>
+                </div>
+                <div class="control-rightview">
+                    <!--音量键-->
+                    <div class="fa fa-volume-up" id="mutedBtn"></div>
+                    <!--全屏键-->
+                    <div class="fa fa-arrows-alt" id="fullScreenBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../jquery/jquery.min.js"></script>
+    <!-- <script src="/jquery.min.js"></script> -->
+    <script src="../JS/index.js"></script>
+    <!-- <script src="/index.js"></script> -->
+</body>
+</html>
