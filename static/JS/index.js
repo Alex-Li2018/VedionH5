@@ -4,8 +4,13 @@ $(function(){
     var vedioFN = {
 
         //鼠标移入或则全屏的时候隐藏视频的控制栏
-        videoControlStatus(){
-            
+        vedioControlStatus(){
+            $('.video-box').on('mouseenter',function(){
+                $('#videoControl').show();
+            });
+            $('.video-box').on('mouseleave',function(){
+                $('#videoControl').hide();
+            });
         },
 
         //播放与暂停功能
@@ -35,9 +40,10 @@ $(function(){
                 //刷新视频
                 $('#videoBody')[0].load();
                 //将进度条,缓存条全部归零
-                //利用动画移动进度条
                 $('#currentBar').css({width : 0+'px'});
                 $('#drawBar').css({left : 0+'px'});
+                //刷新之后,图标改变为播放图标
+                $('#playPausebtn').removeClass('fa-pause').addClass('fa-play');
             });
         },
         
@@ -108,7 +114,7 @@ $(function(){
                 //视频时长
                 let maxduration = $('#videoBody')[0].duration;
                 //当前缓冲进度时长结束位置
-                var currentBuffer = $('#videoBody')[0].buffered.end(0); 
+                let currentBuffer = $('#videoBody')[0].buffered.end(0); 
                 // 求取百分比
                 let percentage = 100 * currentBuffer / maxduration;
 
@@ -121,17 +127,26 @@ $(function(){
         },
 
         // 音量键的开启关闭
-        // muted(){
-        //     $('#mutedBtn').on('click',function(){
-        //         muted();
-        //     });
-        //     function muted(){
-        //         //如果为静音则开启，如果为开启状态则关闭
-        //         $('#videoBody')[0].muted=!$('#videoBody')[0].muted;
-        //     }
-        // }
+        muted(){
+            //显示音量控制键
+            $('#mutedBtn').on('click',function(){
+                //点击音量之后,显示音量控制界面
+                if($('#range').css('display') == 'none') {
+                    $('#range').show();
+                }else {
+                    $('#range').hide();
+                }
+            });
+            //当滑动音量键的时候,改变视频的音量
+            $('#range').on('change',function(){
+                $('#videoBody')[0].volume = $('#range')[0].value / 100;
+                console.log($('#range')[0].value / 100);
+            });
+        }
     } 
 
+    //调用方法控制视频控件的显示
+    //vedioFN.vedioControlStatus();
     //调用暂停播放方法
     vedioFN.playPause();
     //调用方法刷新视频
@@ -141,9 +156,9 @@ $(function(){
     //调用方法显示视频时间以及播放时进度条
     vedioFN.playTime();
     //调用方法显示缓存进度条
-    vedioFN.buffer();
+    //vedioFN.buffer();
     //调用方法开启关闭音乐
-    //vedioFN.muted();
+    vedioFN.muted();
 })
 
 

@@ -35,6 +35,15 @@ body {
     padding: 5px 0px;
 }
 
+/* 音量控制 */
+#range {
+    position: absolute;
+    top: -75px;
+    right: 100px;
+    /* 沿着顺时针与逆时针旋转 */
+    transform: rotateZ(-90deg);
+    display: none; 
+}
 
 #loadBtn,#playPausebtn,
 #mutedBtn,#fullScreenBar {
